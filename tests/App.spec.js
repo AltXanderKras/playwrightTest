@@ -16,6 +16,10 @@ test("Проверка успешности авторизации", async ({ pa
   await page.waitForSelector(
     "h2.src-components-pages-Profile-Programs--title--Kw5NH"
   );
+  const isProfilePageVisible = await page.isVisible(
+    "h2.src-components-pages-Profile-Programs--title--Kw5NH"
+  );
+  expect(isProfilePageVisible).toBeTruthy();
 });
 
 test("Проверка авторизации с неверным email", async ({ page }) => {
